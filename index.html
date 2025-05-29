@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de Vendas</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <h1>Dashboard de Vendas</h1>
+
+    <!-- KPIs -->
+    <div class="kpis">
+        <div class="kpi">
+            <div>Faturamento</div>
+            <div class="valor" id="faturamento">--</div>
+        </div>
+        <div class="kpi">
+            <div>Qtd. Vendas</div>
+            <div class="valor" id="vendas">--</div>
+        </div>
+        <div class="kpi">
+            <div>Ticket Médio</div>
+            <div class="valor" id="ticket">--</div>
+        </div>
+        <div class="kpi">
+            <div>Qtd. Produtos</div>
+            <div class="valor" id="produtos">--</div>
+        </div>
+        <div class="kpi">
+            <div>Clientes únicos</div>
+            <div class="valor" id="clientes">--</div>
+        </div>
+    </div>
+
+    <!-- Gráficos principais -->
+    <div class="layout-graficos">
+        <!-- Coluna Esquerda -->
+        <div class="coluna esquerda">
+            <section class="bloco-grafico">
+                <h2>Faturamento por Mês</h2>
+                <div class="controles">
+                    <label>
+                        <input type="checkbox" id="toggleLabels" />
+                        Mostrar valores no gráfico
+                    </label>
+                    <label for="filtroAno">Filtrar por ano:</label>
+                    <select id="filtroAno">
+                        <option value="todos">Todos</option>
+                    </select>
+                </div>
+                <canvas id="graficoFaturamento" width="800" height="180"></canvas>
+            </section>
+
+            <section class="bloco-grafico">
+                <h3>Vendas por Mês</h3>
+                <canvas id="graficoVendas" width="800" height="180"></canvas>
+            </section>
+        </div>
+
+        <!-- Coluna Direita -->
+        <div class="coluna direita">
+            <div class="dupla-horizontal">
+                <section class="bloco-grafico">
+                    <h3>Faturamento por Produto</h3>
+                    <canvas id="graficoProduto" width="400" height="750"></canvas>
+                </section>
+                <section class="bloco-grafico">
+                    <h3>Faturamento por Estado</h3>
+                    <canvas id="graficoEstado" width="400" height="750"></canvas>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Chart.js + Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+    <!-- Scripts do dashboard -->
+    <script src="./assets/js/kpis.js"></script>
+    <script src="./assets/js/graficoFaturamento.js"></script>
+    <script src="./assets/js/graficoVendas.js"></script>
+    <script src="./assets/js/graficoProduto.js"></script>
+    <script src="./assets/js/graficoEstado.js"></script>
+    <script src="./assets/js/init.js"></script>
+
+</body>
+
+</html>

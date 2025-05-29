@@ -1,0 +1,37 @@
+[
+    {
+        "id_produto": 1,
+        "produto": "Notebook",
+        "categoria": "Eletrônicos",
+        "quantidade": 921,
+        "valor_total": 3223500.0
+    },
+    {
+        "id_produto": 2,
+        "produto": "Smartphone",
+        "categoria": "Eletrônicos",
+        "quantidade": 1032,
+        "valor_total": 2064000.0
+    },
+    {
+        "id_produto": 3,
+        "produto": "Fone de Ouvido",
+        "categoria": "Acessórios",
+        "quantidade": 842,
+        "valor_total": 210500.0
+    },
+    {
+        "id_produto": 4,
+        "produto": "Mochila",
+        "categoria": "Acessórios",
+        "quantidade": 864,
+        "valor_total": 129600.0
+    },
+    {
+        "id_produto": 5,
+        "produto": "Monitor",
+        "categoria": "Periféricos",
+        "quantidade": 869,
+        "valor_total": 695200.0
+    }
+]

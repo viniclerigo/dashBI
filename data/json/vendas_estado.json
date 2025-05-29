@@ -1,0 +1,1202 @@
+[
+    {
+        "id_cliente": 1,
+        "estado": "GO",
+        "quantidade": 26.0,
+        "valor_total": 29550.0
+    },
+    {
+        "id_cliente": 2,
+        "estado": "RJ",
+        "quantidade": 32.0,
+        "valor_total": 58150.0
+    },
+    {
+        "id_cliente": 3,
+        "estado": "SP",
+        "quantidade": 29.0,
+        "valor_total": 53550.0
+    },
+    {
+        "id_cliente": 4,
+        "estado": "PB",
+        "quantidade": 19.0,
+        "valor_total": 31600.0
+    },
+    {
+        "id_cliente": 5,
+        "estado": "TO",
+        "quantidade": 38.0,
+        "valor_total": 51750.0
+    },
+    {
+        "id_cliente": 6,
+        "estado": "DF",
+        "quantidade": 26.0,
+        "valor_total": 42450.0
+    },
+    {
+        "id_cliente": 7,
+        "estado": "DF",
+        "quantidade": 13.0,
+        "valor_total": 30500.0
+    },
+    {
+        "id_cliente": 8,
+        "estado": "MT",
+        "quantidade": 48.0,
+        "valor_total": 81600.0
+    },
+    {
+        "id_cliente": 9,
+        "estado": "RR",
+        "quantidade": 32.0,
+        "valor_total": 41600.0
+    },
+    {
+        "id_cliente": 10,
+        "estado": "SP",
+        "quantidade": 29.0,
+        "valor_total": 29100.0
+    },
+    {
+        "id_cliente": 11,
+        "estado": "PA",
+        "quantidade": 23.0,
+        "valor_total": 39800.0
+    },
+    {
+        "id_cliente": 12,
+        "estado": "SC",
+        "quantidade": 29.0,
+        "valor_total": 34850.0
+    },
+    {
+        "id_cliente": 13,
+        "estado": "SP",
+        "quantidade": 27.0,
+        "valor_total": 40300.0
+    },
+    {
+        "id_cliente": 14,
+        "estado": "DF",
+        "quantidade": 30.0,
+        "valor_total": 65000.0
+    },
+    {
+        "id_cliente": 15,
+        "estado": "RO",
+        "quantidade": 27.0,
+        "valor_total": 37150.0
+    },
+    {
+        "id_cliente": 16,
+        "estado": "DF",
+        "quantidade": 27.0,
+        "valor_total": 47450.0
+    },
+    {
+        "id_cliente": 17,
+        "estado": "ES",
+        "quantidade": 29.0,
+        "valor_total": 50000.0
+    },
+    {
+        "id_cliente": 18,
+        "estado": "AC",
+        "quantidade": 26.0,
+        "valor_total": 19400.0
+    },
+    {
+        "id_cliente": 19,
+        "estado": "AP",
+        "quantidade": 18.0,
+        "valor_total": 12500.0
+    },
+    {
+        "id_cliente": 20,
+        "estado": "PE",
+        "quantidade": 19.0,
+        "valor_total": 8850.0
+    },
+    {
+        "id_cliente": 21,
+        "estado": "SE",
+        "quantidade": 25.0,
+        "valor_total": 26700.0
+    },
+    {
+        "id_cliente": 22,
+        "estado": "RN",
+        "quantidade": 17.0,
+        "valor_total": 38950.0
+    },
+    {
+        "id_cliente": 23,
+        "estado": "RR",
+        "quantidade": 19.0,
+        "valor_total": 30800.0
+    },
+    {
+        "id_cliente": 24,
+        "estado": "GO",
+        "quantidade": 14.0,
+        "valor_total": 22200.0
+    },
+    {
+        "id_cliente": 25,
+        "estado": "AP",
+        "quantidade": 7.0,
+        "valor_total": 18450.0
+    },
+    {
+        "id_cliente": 26,
+        "estado": "DF",
+        "quantidade": 9.0,
+        "valor_total": 14300.0
+    },
+    {
+        "id_cliente": 27,
+        "estado": "RJ",
+        "quantidade": 34.0,
+        "valor_total": 28750.0
+    },
+    {
+        "id_cliente": 28,
+        "estado": "AP",
+        "quantidade": 16.0,
+        "valor_total": 12550.0
+    },
+    {
+        "id_cliente": 29,
+        "estado": "AP",
+        "quantidade": 21.0,
+        "valor_total": 36600.0
+    },
+    {
+        "id_cliente": 30,
+        "estado": "RO",
+        "quantidade": 30.0,
+        "valor_total": 26650.0
+    },
+    {
+        "id_cliente": 31,
+        "estado": "MG",
+        "quantidade": 23.0,
+        "valor_total": 28750.0
+    },
+    {
+        "id_cliente": 32,
+        "estado": "RR",
+        "quantidade": 13.0,
+        "valor_total": 16500.0
+    },
+    {
+        "id_cliente": 33,
+        "estado": "SE",
+        "quantidade": 33.0,
+        "valor_total": 70500.0
+    },
+    {
+        "id_cliente": 34,
+        "estado": "RR",
+        "quantidade": 16.0,
+        "valor_total": 26550.0
+    },
+    {
+        "id_cliente": 35,
+        "estado": "RO",
+        "quantidade": 26.0,
+        "valor_total": 13300.0
+    },
+    {
+        "id_cliente": 36,
+        "estado": "MG",
+        "quantidade": 15.0,
+        "valor_total": 38550.0
+    },
+    {
+        "id_cliente": 37,
+        "estado": "PE",
+        "quantidade": 28.0,
+        "valor_total": 41850.0
+    },
+    {
+        "id_cliente": 38,
+        "estado": "SP",
+        "quantidade": 28.0,
+        "valor_total": 17150.0
+    },
+    {
+        "id_cliente": 39,
+        "estado": "RR",
+        "quantidade": 16.0,
+        "valor_total": 19900.0
+    },
+    {
+        "id_cliente": 40,
+        "estado": "ES",
+        "quantidade": 27.0,
+        "valor_total": 19850.0
+    },
+    {
+        "id_cliente": 41,
+        "estado": "RN",
+        "quantidade": 13.0,
+        "valor_total": 18050.0
+    },
+    {
+        "id_cliente": 42,
+        "estado": "AP",
+        "quantidade": 14.0,
+        "valor_total": 35800.0
+    },
+    {
+        "id_cliente": 43,
+        "estado": "RS",
+        "quantidade": 18.0,
+        "valor_total": 39750.0
+    },
+    {
+        "id_cliente": 44,
+        "estado": "SC",
+        "quantidade": 26.0,
+        "valor_total": 48500.0
+    },
+    {
+        "id_cliente": 45,
+        "estado": "RS",
+        "quantidade": 43.0,
+        "valor_total": 53150.0
+    },
+    {
+        "id_cliente": 46,
+        "estado": "RJ",
+        "quantidade": 15.0,
+        "valor_total": 20150.0
+    },
+    {
+        "id_cliente": 47,
+        "estado": "PB",
+        "quantidade": 26.0,
+        "valor_total": 20500.0
+    },
+    {
+        "id_cliente": 48,
+        "estado": "SC",
+        "quantidade": 16.0,
+        "valor_total": 9350.0
+    },
+    {
+        "id_cliente": 49,
+        "estado": "AM",
+        "quantidade": 27.0,
+        "valor_total": 14900.0
+    },
+    {
+        "id_cliente": 50,
+        "estado": "MT",
+        "quantidade": 16.0,
+        "valor_total": 27050.0
+    },
+    {
+        "id_cliente": 51,
+        "estado": "MT",
+        "quantidade": 4.0,
+        "valor_total": 1000.0
+    },
+    {
+        "id_cliente": 52,
+        "estado": "RR",
+        "quantidade": 39.0,
+        "valor_total": 70100.0
+    },
+    {
+        "id_cliente": 53,
+        "estado": "RN",
+        "quantidade": 6.0,
+        "valor_total": 14500.0
+    },
+    {
+        "id_cliente": 54,
+        "estado": "ES",
+        "quantidade": 28.0,
+        "valor_total": 39650.0
+    },
+    {
+        "id_cliente": 55,
+        "estado": "AC",
+        "quantidade": 42.0,
+        "valor_total": 51000.0
+    },
+    {
+        "id_cliente": 56,
+        "estado": "SC",
+        "quantidade": 18.0,
+        "valor_total": 40650.0
+    },
+    {
+        "id_cliente": 57,
+        "estado": "RJ",
+        "quantidade": 33.0,
+        "valor_total": 73050.0
+    },
+    {
+        "id_cliente": 58,
+        "estado": "MG",
+        "quantidade": 38.0,
+        "valor_total": 27750.0
+    },
+    {
+        "id_cliente": 59,
+        "estado": "SP",
+        "quantidade": 23.0,
+        "valor_total": 49450.0
+    },
+    {
+        "id_cliente": 60,
+        "estado": "PI",
+        "quantidade": 23.0,
+        "valor_total": 47500.0
+    },
+    {
+        "id_cliente": 61,
+        "estado": "AC",
+        "quantidade": 25.0,
+        "valor_total": 19250.0
+    },
+    {
+        "id_cliente": 62,
+        "estado": "AP",
+        "quantidade": 25.0,
+        "valor_total": 51150.0
+    },
+    {
+        "id_cliente": 63,
+        "estado": "MG",
+        "quantidade": 17.0,
+        "valor_total": 49000.0
+    },
+    {
+        "id_cliente": 64,
+        "estado": "MT",
+        "quantidade": 24.0,
+        "valor_total": 29300.0
+    },
+    {
+        "id_cliente": 65,
+        "estado": "RR",
+        "quantidade": 20.0,
+        "valor_total": 30150.0
+    },
+    {
+        "id_cliente": 66,
+        "estado": "ES",
+        "quantidade": 22.0,
+        "valor_total": 21050.0
+    },
+    {
+        "id_cliente": 67,
+        "estado": "PB",
+        "quantidade": 26.0,
+        "valor_total": 38800.0
+    },
+    {
+        "id_cliente": 68,
+        "estado": "MT",
+        "quantidade": 17.0,
+        "valor_total": 19300.0
+    },
+    {
+        "id_cliente": 69,
+        "estado": "AC",
+        "quantidade": 24.0,
+        "valor_total": 18900.0
+    },
+    {
+        "id_cliente": 70,
+        "estado": "BA",
+        "quantidade": 13.0,
+        "valor_total": 17550.0
+    },
+    {
+        "id_cliente": 71,
+        "estado": "MS",
+        "quantidade": 21.0,
+        "valor_total": 15500.0
+    },
+    {
+        "id_cliente": 72,
+        "estado": "AP",
+        "quantidade": 15.0,
+        "valor_total": 22850.0
+    },
+    {
+        "id_cliente": 73,
+        "estado": "DF",
+        "quantidade": 36.0,
+        "valor_total": 42600.0
+    },
+    {
+        "id_cliente": 74,
+        "estado": "AL",
+        "quantidade": 26.0,
+        "valor_total": 48550.0
+    },
+    {
+        "id_cliente": 75,
+        "estado": "MT",
+        "quantidade": 21.0,
+        "valor_total": 28650.0
+    },
+    {
+        "id_cliente": 76,
+        "estado": "CE",
+        "quantidade": 13.0,
+        "valor_total": 23900.0
+    },
+    {
+        "id_cliente": 77,
+        "estado": "RO",
+        "quantidade": 4.0,
+        "valor_total": 6800.0
+    },
+    {
+        "id_cliente": 78,
+        "estado": "AM",
+        "quantidade": 23.0,
+        "valor_total": 23250.0
+    },
+    {
+        "id_cliente": 79,
+        "estado": "RS",
+        "quantidade": 4.0,
+        "valor_total": 3200.0
+    },
+    {
+        "id_cliente": 80,
+        "estado": "PR",
+        "quantidade": 21.0,
+        "valor_total": 33950.0
+    },
+    {
+        "id_cliente": 81,
+        "estado": "MG",
+        "quantidade": 12.0,
+        "valor_total": 31550.0
+    },
+    {
+        "id_cliente": 82,
+        "estado": "RO",
+        "quantidade": 22.0,
+        "valor_total": 28700.0
+    },
+    {
+        "id_cliente": 83,
+        "estado": "SE",
+        "quantidade": 18.0,
+        "valor_total": 11800.0
+    },
+    {
+        "id_cliente": 84,
+        "estado": "GO",
+        "quantidade": 13.0,
+        "valor_total": 12000.0
+    },
+    {
+        "id_cliente": 85,
+        "estado": "AC",
+        "quantidade": 17.0,
+        "valor_total": 22300.0
+    },
+    {
+        "id_cliente": 86,
+        "estado": "BA",
+        "quantidade": 14.0,
+        "valor_total": 10100.0
+    },
+    {
+        "id_cliente": 87,
+        "estado": "RN",
+        "quantidade": 16.0,
+        "valor_total": 13950.0
+    },
+    {
+        "id_cliente": 88,
+        "estado": "PB",
+        "quantidade": 23.0,
+        "valor_total": 33700.0
+    },
+    {
+        "id_cliente": 89,
+        "estado": "SE",
+        "quantidade": 22.0,
+        "valor_total": 31350.0
+    },
+    {
+        "id_cliente": 90,
+        "estado": "PB",
+        "quantidade": 15.0,
+        "valor_total": 17250.0
+    },
+    {
+        "id_cliente": 91,
+        "estado": "SE",
+        "quantidade": 25.0,
+        "valor_total": 23650.0
+    },
+    {
+        "id_cliente": 92,
+        "estado": "RN",
+        "quantidade": 28.0,
+        "valor_total": 47600.0
+    },
+    {
+        "id_cliente": 93,
+        "estado": "RR",
+        "quantidade": 37.0,
+        "valor_total": 56550.0
+    },
+    {
+        "id_cliente": 94,
+        "estado": "RR",
+        "quantidade": 21.0,
+        "valor_total": 29250.0
+    },
+    {
+        "id_cliente": 95,
+        "estado": "AL",
+        "quantidade": 26.0,
+        "valor_total": 55600.0
+    },
+    {
+        "id_cliente": 96,
+        "estado": "GO",
+        "quantidade": 18.0,
+        "valor_total": 40200.0
+    },
+    {
+        "id_cliente": 97,
+        "estado": "RR",
+        "quantidade": 18.0,
+        "valor_total": 31500.0
+    },
+    {
+        "id_cliente": 98,
+        "estado": "SC",
+        "quantidade": 19.0,
+        "valor_total": 28900.0
+    },
+    {
+        "id_cliente": 99,
+        "estado": "AL",
+        "quantidade": 29.0,
+        "valor_total": 51150.0
+    },
+    {
+        "id_cliente": 100,
+        "estado": "SE",
+        "quantidade": 35.0,
+        "valor_total": 47350.0
+    },
+    {
+        "id_cliente": 101,
+        "estado": "MA",
+        "quantidade": 27.0,
+        "valor_total": 33750.0
+    },
+    {
+        "id_cliente": 102,
+        "estado": "PA",
+        "quantidade": 20.0,
+        "valor_total": 30100.0
+    },
+    {
+        "id_cliente": 103,
+        "estado": "PA",
+        "quantidade": 30.0,
+        "valor_total": 30400.0
+    },
+    {
+        "id_cliente": 104,
+        "estado": "GO",
+        "quantidade": 19.0,
+        "valor_total": 24350.0
+    },
+    {
+        "id_cliente": 105,
+        "estado": "MS",
+        "quantidade": 33.0,
+        "valor_total": 79750.0
+    },
+    {
+        "id_cliente": 106,
+        "estado": "MG",
+        "quantidade": 34.0,
+        "valor_total": 86350.0
+    },
+    {
+        "id_cliente": 107,
+        "estado": "RS",
+        "quantidade": 25.0,
+        "valor_total": 33100.0
+    },
+    {
+        "id_cliente": 108,
+        "estado": "DF",
+        "quantidade": 29.0,
+        "valor_total": 40250.0
+    },
+    {
+        "id_cliente": 109,
+        "estado": "SP",
+        "quantidade": 28.0,
+        "valor_total": 29700.0
+    },
+    {
+        "id_cliente": 110,
+        "estado": "MS",
+        "quantidade": 16.0,
+        "valor_total": 32800.0
+    },
+    {
+        "id_cliente": 111,
+        "estado": "RN",
+        "quantidade": 31.0,
+        "valor_total": 38850.0
+    },
+    {
+        "id_cliente": 112,
+        "estado": "AL",
+        "quantidade": 8.0,
+        "valor_total": 9550.0
+    },
+    {
+        "id_cliente": 113,
+        "estado": "RO",
+        "quantidade": 29.0,
+        "valor_total": 33100.0
+    },
+    {
+        "id_cliente": 114,
+        "estado": "PA",
+        "quantidade": 16.0,
+        "valor_total": 37100.0
+    },
+    {
+        "id_cliente": 115,
+        "estado": "SP",
+        "quantidade": 25.0,
+        "valor_total": 36050.0
+    },
+    {
+        "id_cliente": 116,
+        "estado": "PA",
+        "quantidade": 36.0,
+        "valor_total": 50950.0
+    },
+    {
+        "id_cliente": 117,
+        "estado": "DF",
+        "quantidade": 11.0,
+        "valor_total": 6850.0
+    },
+    {
+        "id_cliente": 118,
+        "estado": "GO",
+        "quantidade": 30.0,
+        "valor_total": 37750.0
+    },
+    {
+        "id_cliente": 119,
+        "estado": "MS",
+        "quantidade": 10.0,
+        "valor_total": 11600.0
+    },
+    {
+        "id_cliente": 120,
+        "estado": "MA",
+        "quantidade": 40.0,
+        "valor_total": 64750.0
+    },
+    {
+        "id_cliente": 121,
+        "estado": "SE",
+        "quantidade": 28.0,
+        "valor_total": 72600.0
+    },
+    {
+        "id_cliente": 122,
+        "estado": "CE",
+        "quantidade": 18.0,
+        "valor_total": 46800.0
+    },
+    {
+        "id_cliente": 123,
+        "estado": "PA",
+        "quantidade": 30.0,
+        "valor_total": 11450.0
+    },
+    {
+        "id_cliente": 124,
+        "estado": "SP",
+        "quantidade": 18.0,
+        "valor_total": 28300.0
+    },
+    {
+        "id_cliente": 125,
+        "estado": "RN",
+        "quantidade": 13.0,
+        "valor_total": 29350.0
+    },
+    {
+        "id_cliente": 126,
+        "estado": "SE",
+        "quantidade": 31.0,
+        "valor_total": 33850.0
+    },
+    {
+        "id_cliente": 127,
+        "estado": "PI",
+        "quantidade": 17.0,
+        "valor_total": 14250.0
+    },
+    {
+        "id_cliente": 128,
+        "estado": "SP",
+        "quantidade": 17.0,
+        "valor_total": 26200.0
+    },
+    {
+        "id_cliente": 129,
+        "estado": "RN",
+        "quantidade": 0,
+        "valor_total": 0
+    },
+    {
+        "id_cliente": 130,
+        "estado": "PB",
+        "quantidade": 14.0,
+        "valor_total": 8450.0
+    },
+    {
+        "id_cliente": 131,
+        "estado": "RS",
+        "quantidade": 20.0,
+        "valor_total": 25450.0
+    },
+    {
+        "id_cliente": 132,
+        "estado": "GO",
+        "quantidade": 40.0,
+        "valor_total": 56000.0
+    },
+    {
+        "id_cliente": 133,
+        "estado": "RJ",
+        "quantidade": 15.0,
+        "valor_total": 21250.0
+    },
+    {
+        "id_cliente": 134,
+        "estado": "ES",
+        "quantidade": 22.0,
+        "valor_total": 31150.0
+    },
+    {
+        "id_cliente": 135,
+        "estado": "AP",
+        "quantidade": 14.0,
+        "valor_total": 28000.0
+    },
+    {
+        "id_cliente": 136,
+        "estado": "AC",
+        "quantidade": 25.0,
+        "valor_total": 16050.0
+    },
+    {
+        "id_cliente": 137,
+        "estado": "MS",
+        "quantidade": 30.0,
+        "valor_total": 59850.0
+    },
+    {
+        "id_cliente": 138,
+        "estado": "MS",
+        "quantidade": 13.0,
+        "valor_total": 14100.0
+    },
+    {
+        "id_cliente": 139,
+        "estado": "PA",
+        "quantidade": 14.0,
+        "valor_total": 20200.0
+    },
+    {
+        "id_cliente": 140,
+        "estado": "BA",
+        "quantidade": 19.0,
+        "valor_total": 15950.0
+    },
+    {
+        "id_cliente": 141,
+        "estado": "GO",
+        "quantidade": 35.0,
+        "valor_total": 45750.0
+    },
+    {
+        "id_cliente": 142,
+        "estado": "SP",
+        "quantidade": 28.0,
+        "valor_total": 29100.0
+    },
+    {
+        "id_cliente": 143,
+        "estado": "PI",
+        "quantidade": 41.0,
+        "valor_total": 39800.0
+    },
+    {
+        "id_cliente": 144,
+        "estado": "AC",
+        "quantidade": 25.0,
+        "valor_total": 34050.0
+    },
+    {
+        "id_cliente": 145,
+        "estado": "SE",
+        "quantidade": 12.0,
+        "valor_total": 9050.0
+    },
+    {
+        "id_cliente": 146,
+        "estado": "SP",
+        "quantidade": 14.0,
+        "valor_total": 37000.0
+    },
+    {
+        "id_cliente": 147,
+        "estado": "MG",
+        "quantidade": 16.0,
+        "valor_total": 16400.0
+    },
+    {
+        "id_cliente": 148,
+        "estado": "PI",
+        "quantidade": 33.0,
+        "valor_total": 37900.0
+    },
+    {
+        "id_cliente": 149,
+        "estado": "MT",
+        "quantidade": 11.0,
+        "valor_total": 7700.0
+    },
+    {
+        "id_cliente": 150,
+        "estado": "SE",
+        "quantidade": 27.0,
+        "valor_total": 29800.0
+    },
+    {
+        "id_cliente": 151,
+        "estado": "AC",
+        "quantidade": 23.0,
+        "valor_total": 28750.0
+    },
+    {
+        "id_cliente": 152,
+        "estado": "SE",
+        "quantidade": 18.0,
+        "valor_total": 33000.0
+    },
+    {
+        "id_cliente": 153,
+        "estado": "PB",
+        "quantidade": 13.0,
+        "valor_total": 12000.0
+    },
+    {
+        "id_cliente": 154,
+        "estado": "AP",
+        "quantidade": 33.0,
+        "valor_total": 56150.0
+    },
+    {
+        "id_cliente": 155,
+        "estado": "SP",
+        "quantidade": 16.0,
+        "valor_total": 28200.0
+    },
+    {
+        "id_cliente": 156,
+        "estado": "GO",
+        "quantidade": 21.0,
+        "valor_total": 36750.0
+    },
+    {
+        "id_cliente": 157,
+        "estado": "AL",
+        "quantidade": 23.0,
+        "valor_total": 41500.0
+    },
+    {
+        "id_cliente": 158,
+        "estado": "SP",
+        "quantidade": 39.0,
+        "valor_total": 41450.0
+    },
+    {
+        "id_cliente": 159,
+        "estado": "ES",
+        "quantidade": 26.0,
+        "valor_total": 25950.0
+    },
+    {
+        "id_cliente": 160,
+        "estado": "CE",
+        "quantidade": 17.0,
+        "valor_total": 23100.0
+    },
+    {
+        "id_cliente": 161,
+        "estado": "AL",
+        "quantidade": 22.0,
+        "valor_total": 46900.0
+    },
+    {
+        "id_cliente": 162,
+        "estado": "MT",
+        "quantidade": 19.0,
+        "valor_total": 9600.0
+    },
+    {
+        "id_cliente": 163,
+        "estado": "MA",
+        "quantidade": 29.0,
+        "valor_total": 36850.0
+    },
+    {
+        "id_cliente": 164,
+        "estado": "MT",
+        "quantidade": 44.0,
+        "valor_total": 42650.0
+    },
+    {
+        "id_cliente": 165,
+        "estado": "RR",
+        "quantidade": 31.0,
+        "valor_total": 71250.0
+    },
+    {
+        "id_cliente": 166,
+        "estado": "PR",
+        "quantidade": 27.0,
+        "valor_total": 40350.0
+    },
+    {
+        "id_cliente": 167,
+        "estado": "RR",
+        "quantidade": 20.0,
+        "valor_total": 23950.0
+    },
+    {
+        "id_cliente": 168,
+        "estado": "AL",
+        "quantidade": 28.0,
+        "valor_total": 37500.0
+    },
+    {
+        "id_cliente": 169,
+        "estado": "PA",
+        "quantidade": 26.0,
+        "valor_total": 31000.0
+    },
+    {
+        "id_cliente": 170,
+        "estado": "RS",
+        "quantidade": 20.0,
+        "valor_total": 12600.0
+    },
+    {
+        "id_cliente": 171,
+        "estado": "RN",
+        "quantidade": 22.0,
+        "valor_total": 51250.0
+    },
+    {
+        "id_cliente": 172,
+        "estado": "PA",
+        "quantidade": 4.0,
+        "valor_total": 4300.0
+    },
+    {
+        "id_cliente": 173,
+        "estado": "AL",
+        "quantidade": 14.0,
+        "valor_total": 14750.0
+    },
+    {
+        "id_cliente": 174,
+        "estado": "TO",
+        "quantidade": 18.0,
+        "valor_total": 25400.0
+    },
+    {
+        "id_cliente": 175,
+        "estado": "AC",
+        "quantidade": 27.0,
+        "valor_total": 23800.0
+    },
+    {
+        "id_cliente": 176,
+        "estado": "SC",
+        "quantidade": 36.0,
+        "valor_total": 42250.0
+    },
+    {
+        "id_cliente": 177,
+        "estado": "PE",
+        "quantidade": 21.0,
+        "valor_total": 29800.0
+    },
+    {
+        "id_cliente": 178,
+        "estado": "MT",
+        "quantidade": 14.0,
+        "valor_total": 25750.0
+    },
+    {
+        "id_cliente": 179,
+        "estado": "MT",
+        "quantidade": 23.0,
+        "valor_total": 35800.0
+    },
+    {
+        "id_cliente": 180,
+        "estado": "CE",
+        "quantidade": 17.0,
+        "valor_total": 13900.0
+    },
+    {
+        "id_cliente": 181,
+        "estado": "RN",
+        "quantidade": 32.0,
+        "valor_total": 32450.0
+    },
+    {
+        "id_cliente": 182,
+        "estado": "AM",
+        "quantidade": 20.0,
+        "valor_total": 21600.0
+    },
+    {
+        "id_cliente": 183,
+        "estado": "AM",
+        "quantidade": 17.0,
+        "valor_total": 20750.0
+    },
+    {
+        "id_cliente": 184,
+        "estado": "MG",
+        "quantidade": 18.0,
+        "valor_total": 32400.0
+    },
+    {
+        "id_cliente": 185,
+        "estado": "RJ",
+        "quantidade": 19.0,
+        "valor_total": 30400.0
+    },
+    {
+        "id_cliente": 186,
+        "estado": "ES",
+        "quantidade": 21.0,
+        "valor_total": 31150.0
+    },
+    {
+        "id_cliente": 187,
+        "estado": "RN",
+        "quantidade": 28.0,
+        "valor_total": 57650.0
+    },
+    {
+        "id_cliente": 188,
+        "estado": "PR",
+        "quantidade": 18.0,
+        "valor_total": 9450.0
+    },
+    {
+        "id_cliente": 189,
+        "estado": "MG",
+        "quantidade": 15.0,
+        "valor_total": 19750.0
+    },
+    {
+        "id_cliente": 190,
+        "estado": "AL",
+        "quantidade": 24.0,
+        "valor_total": 19000.0
+    },
+    {
+        "id_cliente": 191,
+        "estado": "AP",
+        "quantidade": 28.0,
+        "valor_total": 17700.0
+    },
+    {
+        "id_cliente": 192,
+        "estado": "AP",
+        "quantidade": 21.0,
+        "valor_total": 31000.0
+    },
+    {
+        "id_cliente": 193,
+        "estado": "PA",
+        "quantidade": 9.0,
+        "valor_total": 4600.0
+    },
+    {
+        "id_cliente": 194,
+        "estado": "RN",
+        "quantidade": 33.0,
+        "valor_total": 57800.0
+    },
+    {
+        "id_cliente": 195,
+        "estado": "PA",
+        "quantidade": 17.0,
+        "valor_total": 19200.0
+    },
+    {
+        "id_cliente": 196,
+        "estado": "RN",
+        "quantidade": 15.0,
+        "valor_total": 21650.0
+    },
+    {
+        "id_cliente": 197,
+        "estado": "PB",
+        "quantidade": 13.0,
+        "valor_total": 29800.0
+    },
+    {
+        "id_cliente": 198,
+        "estado": "AP",
+        "quantidade": 20.0,
+        "valor_total": 34700.0
+    },
+    {
+        "id_cliente": 199,
+        "estado": "AL",
+        "quantidade": 39.0,
+        "valor_total": 31850.0
+    },
+    {
+        "id_cliente": 200,
+        "estado": "DF",
+        "quantidade": 36.0,
+        "valor_total": 36500.0
+    }
+]
