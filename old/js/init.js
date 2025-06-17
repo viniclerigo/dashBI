@@ -14,8 +14,11 @@ fetch("./data/json/faturamento_mensal.json")
         });
 
         select.addEventListener("change", () => {
-            atualizarGraficoPorAno(select.value);
+            const anoSelecionado = select.value;
+            atualizarGraficoPorAno(anoSelecionado);
+            atualizarKPIs(anoSelecionado); // chama a função do kpis.js
         });
 
         atualizarGraficoPorAno("todos");
+        atualizarKPIs("todos");
     });

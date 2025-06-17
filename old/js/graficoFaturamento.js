@@ -1,5 +1,21 @@
 let dadosOriginal = [];
-let mostrarLabels = false;
+
+// Corrige blur do canvas em telas com DPI alto
+function ajustarResolucaoCanvas(canvas) {
+    const ctx = canvas.getContext("2d");
+    const ratio = window.devicePixelRatio || 1;
+
+    // Pega o tamanho visível do canvas no layout
+    const largura = canvas.clientWidth;
+    const altura = canvas.clientHeight;
+
+    // Ajusta a resolução do canvas para o tamanho visível multiplicado pela densidade da tela
+    canvas.width = Math.floor(largura * ratio);
+    canvas.height = Math.floor(altura * ratio);
+
+    // Ajusta a escala do contexto para ficar nítido
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+}
 
 // Atualiza gráfico por ano selecionado
 function atualizarGraficoPorAno(anoSelecionado) {
@@ -19,7 +35,11 @@ function atualizarGraficoPorAno(anoSelecionado) {
     const labels = dadosFiltrados.map(d => d.mes);
     const valores = dadosFiltrados.map(d => d.valor_total);
 
-    const ctx = document.getElementById("graficoFaturamento").getContext("2d");
+    const canvas = document.getElementById("graficoFaturamento");
+    ajustarResolucaoCanvas(canvas); // Ajuste para nitidez
+
+    const ctx = canvas.getContext("2d");
+
     if (window.graficoFaturamento instanceof Chart) {
         window.graficoFaturamento.destroy();
     }
@@ -39,9 +59,14 @@ function atualizarGraficoPorAno(anoSelecionado) {
         },
         options: {
             responsive: true,
+            layout: {
+                padding: {
+                    right: 40  // espaço extra para data labels
+                }
+            },
             plugins: {
                 datalabels: {
-                    display: mostrarLabels,
+                    display: true,
                     align: 'top',
                     formatter: value => `R$ ${value.toLocaleString('pt-BR')}`,
                     font: { weight: 'bold' },
@@ -55,6 +80,14 @@ function atualizarGraficoPorAno(anoSelecionado) {
                 y: {
                     ticks: {
                         callback: valor => `R$ ${valor.toLocaleString('pt-BR')}`
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
                     }
                 }
             }
@@ -62,10 +95,3 @@ function atualizarGraficoPorAno(anoSelecionado) {
         plugins: [ChartDataLabels]
     });
 }
-
-// Checkbox de mostrar labels
-document.getElementById('toggleLabels').addEventListener('change', function () {
-    mostrarLabels = this.checked;
-    const selectAno = document.getElementById('filtroAno');
-    atualizarGraficoPorAno(selectAno.value);
-});

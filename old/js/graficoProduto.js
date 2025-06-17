@@ -1,29 +1,19 @@
-fetch('./data/json/vendas_estado.json')
+fetch('./data/json/vendas_produtos.json')
     .then(res => res.json())
     .then(data => {
-        console.log('Dados do graficoEstado:', data);
-        if (!Array.isArray(data)) {
-            console.error('Erro: dados do graficoEstado não é array');
-            return;
-        }
-        if (data.length === 0) {
-            console.warn('Dados do graficoEstado estão vazios');
-            return;
-        }
-
-        const estados = data.map(item => item.estado);
+        const produtos = data.map(item => item.produto);
         const valores = data.map(item => item.valor_total);
 
-        const ctx = document.getElementById('graficoEstado').getContext('2d');
+        const ctx = document.getElementById('graficoProduto').getContext('2d');
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: estados,
+                labels: produtos,
                 datasets: [{
                     label: 'Faturamento (R$)',
                     data: valores,
-                    backgroundColor: '#2ecc71'
+                    backgroundColor: '#3498db'
                 }]
             },
             options: {
@@ -37,20 +27,26 @@ fetch('./data/json/vendas_estado.json')
                         }
                     },
                     datalabels: {
+                        display: true,
                         anchor: 'end',
                         align: 'right',
-                        formatter: valor => `R$ ${valor.toLocaleString('pt-BR')}`
+                        formatter: valor => `R$ ${valor.toLocaleString('pt-BR')}`,
+                        color: '#2c3e50',
+                        font: { weight: 'bold' }
                     }
                 },
                 scales: {
                     x: {
+                        grid: { display: false },
                         ticks: {
                             callback: valor => `R$ ${valor.toLocaleString('pt-BR')}`
                         }
+                    },
+                    y: {
+                        grid: { display: false }
                     }
                 }
             },
             plugins: [ChartDataLabels]
         });
-    })
-    .catch(err => console.error('Erro ao carregar graficoEstado.json:', err));
+    });

@@ -10,6 +10,15 @@ h1 {
     margin: 1rem 0;
 }
 
+.filtros-gerais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
 .kpis {
     display: flex;
     flex-wrap: wrap;
@@ -33,51 +42,74 @@ h1 {
     margin-top: 0.5rem;
 }
 
+/* Layout principal de gráficos */
 .layout-graficos {
     display: flex;
-    justify-content: space-between;
     padding: 1rem 2rem;
     gap: 1rem;
     height: calc(100vh - 230px);
-    /* Altura para caber tudo na tela */
+    /* Altura disponível total */
     box-sizing: border-box;
 }
 
-.coluna.esquerda {
-    flex: 0 0 60%;
+/* Ambas colunas com altura total e layout flexível */
+.coluna.esquerda,
+.coluna.direita {
     display: flex;
     flex-direction: column;
+    height: 100%;
     gap: 1rem;
+}
+
+/* Proporção das colunas */
+.coluna.esquerda {
+    flex: 0 0 60%;
 }
 
 .coluna.direita {
     flex: 0 0 40%;
+}
+
+/* Blocos de gráficos empilhados na esquerda */
+.coluna.esquerda .bloco-grafico {
+    flex: 1;
+    /* Divide espaço igualmente entre os dois gráficos */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
+/* Blocos lado a lado na direita */
 .dupla-horizontal {
     display: flex;
+    flex: 1;
     gap: 1rem;
-    height: 100%;
 }
 
+/* Cada gráfico na direita ocupa 50% da altura da coluna */
 .dupla-horizontal .bloco-grafico {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
+/* Estilo comum dos blocos */
 .bloco-grafico {
     background: white;
     padding: 0.8rem;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-    height: 100%;
+    overflow: hidden;
 }
 
+/* Canvas ocupa 100% sem blur */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    flex-grow: 1;
+}
+
+/* Outros */
 .controles {
     margin-bottom: 1rem;
     display: flex;
@@ -85,9 +117,4 @@ h1 {
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
-}
-
-canvas {
-    width: 100%;
-    height: auto;
 }
