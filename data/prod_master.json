@@ -1,0 +1,212 @@
+[
+    {
+        "id_produto":"1",
+        "nome":"Fone Bluetooth Plus",
+        "categoria":"Eletrônicos",
+        "preco_unitario":261.96,
+        "id_fornecedor":"2"
+    },
+    {
+        "id_produto":"2",
+        "nome":"Mouse sem fio Max",
+        "categoria":"Eletrônicos",
+        "preco_unitario":448.4,
+        "id_fornecedor":"2"
+    },
+    {
+        "id_produto":"3",
+        "nome":"Teclado mecânico X",
+        "categoria":"Eletrônicos",
+        "preco_unitario":317.45,
+        "id_fornecedor":"1"
+    },
+    {
+        "id_produto":"4",
+        "nome":"Carregador rápido Plus",
+        "categoria":"Eletrônicos",
+        "preco_unitario":440.95,
+        "id_fornecedor":"2"
+    },
+    {
+        "id_produto":"5",
+        "nome":"Caixa de som X",
+        "categoria":"Eletrônicos",
+        "preco_unitario":304.23,
+        "id_fornecedor":"2"
+    },
+    {
+        "id_produto":"6",
+        "nome":"Camiseta básica Plus",
+        "categoria":"Moda",
+        "preco_unitario":283.59,
+        "id_fornecedor":"3"
+    },
+    {
+        "id_produto":"7",
+        "nome":"Calça jeans Max",
+        "categoria":"Moda",
+        "preco_unitario":326.01,
+        "id_fornecedor":"3"
+    },
+    {
+        "id_produto":"8",
+        "nome":"Tênis esportivo Pro",
+        "categoria":"Moda",
+        "preco_unitario":177.48,
+        "id_fornecedor":"3"
+    },
+    {
+        "id_produto":"9",
+        "nome":"Jaqueta corta-vento X",
+        "categoria":"Moda",
+        "preco_unitario":78.74,
+        "id_fornecedor":"4"
+    },
+    {
+        "id_produto":"10",
+        "nome":"Vestido casual Pro",
+        "categoria":"Moda",
+        "preco_unitario":39.67,
+        "id_fornecedor":"3"
+    },
+    {
+        "id_produto":"11",
+        "nome":"Perfume X",
+        "categoria":"Beleza",
+        "preco_unitario":347.12,
+        "id_fornecedor":"5"
+    },
+    {
+        "id_produto":"12",
+        "nome":"Shampoo Plus",
+        "categoria":"Beleza",
+        "preco_unitario":433.43,
+        "id_fornecedor":"6"
+    },
+    {
+        "id_produto":"13",
+        "nome":"Hidratante facial",
+        "categoria":"Beleza",
+        "preco_unitario":294.94,
+        "id_fornecedor":"5"
+    },
+    {
+        "id_produto":"14",
+        "nome":"Base líquida X",
+        "categoria":"Beleza",
+        "preco_unitario":182.41,
+        "id_fornecedor":"6"
+    },
+    {
+        "id_produto":"15",
+        "nome":"Sabonete esfoliante X",
+        "categoria":"Beleza",
+        "preco_unitario":318.67,
+        "id_fornecedor":"6"
+    },
+    {
+        "id_produto":"16",
+        "nome":"Toalha de banho Pro",
+        "categoria":"Casa",
+        "preco_unitario":93.89,
+        "id_fornecedor":"7"
+    },
+    {
+        "id_produto":"17",
+        "nome":"Jogo de lençóis Plus",
+        "categoria":"Casa",
+        "preco_unitario":402.22,
+        "id_fornecedor":"8"
+    },
+    {
+        "id_produto":"18",
+        "nome":"Travesseiro ortopédico Plus",
+        "categoria":"Casa",
+        "preco_unitario":164.74,
+        "id_fornecedor":"8"
+    },
+    {
+        "id_produto":"19",
+        "nome":"Panela antiaderente",
+        "categoria":"Casa",
+        "preco_unitario":410.89,
+        "id_fornecedor":"8"
+    },
+    {
+        "id_produto":"20",
+        "nome":"Cortina blackout X",
+        "categoria":"Casa",
+        "preco_unitario":92.72,
+        "id_fornecedor":"8"
+    },
+    {
+        "id_produto":"21",
+        "nome":"Romance Max",
+        "categoria":"Livros",
+        "preco_unitario":171.74,
+        "id_fornecedor":"9"
+    },
+    {
+        "id_produto":"22",
+        "nome":"Autoajuda Plus",
+        "categoria":"Livros",
+        "preco_unitario":470.63,
+        "id_fornecedor":"10"
+    },
+    {
+        "id_produto":"23",
+        "nome":"Suspense Plus",
+        "categoria":"Livros",
+        "preco_unitario":441.95,
+        "id_fornecedor":"9"
+    },
+    {
+        "id_produto":"24",
+        "nome":"Fantasia Plus",
+        "categoria":"Livros",
+        "preco_unitario":155.75,
+        "id_fornecedor":"10"
+    },
+    {
+        "id_produto":"25",
+        "nome":"Negócios X",
+        "categoria":"Livros",
+        "preco_unitario":42.35,
+        "id_fornecedor":"9"
+    },
+    {
+        "id_produto":"26",
+        "nome":"Bola de futebol X",
+        "categoria":"Esportes",
+        "preco_unitario":267.81,
+        "id_fornecedor":"12"
+    },
+    {
+        "id_produto":"27",
+        "nome":"Caneleira X",
+        "categoria":"Esportes",
+        "preco_unitario":98.07,
+        "id_fornecedor":"12"
+    },
+    {
+        "id_produto":"28",
+        "nome":"Camisa de time X",
+        "categoria":"Esportes",
+        "preco_unitario":355.66,
+        "id_fornecedor":"12"
+    },
+    {
+        "id_produto":"29",
+        "nome":"Luvas de academia Plus",
+        "categoria":"Esportes",
+        "preco_unitario":206.55,
+        "id_fornecedor":"11"
+    },
+    {
+        "id_produto":"30",
+        "nome":"Garrafa térmica Plus",
+        "categoria":"Esportes",
+        "preco_unitario":400.02,
+        "id_fornecedor":"11"
+    }
+]

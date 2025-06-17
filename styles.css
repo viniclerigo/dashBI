@@ -68,6 +68,22 @@ html {
     font-size: 14px;
 }
 
+.datalabel-toggle-btn {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.datalabel-toggle-btn:hover {
+    background-color: #135ba1;
+}
+
 /* === CONTEÚDO PRINCIPAL === */
 .main-content {
     flex: 1;
@@ -90,6 +106,21 @@ html {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
+}
+
+.temporal-chart canvas {
+    width: 100% !important;
+    height: 350px !important;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* === COLUNA DIREITA === */

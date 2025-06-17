@@ -21,7 +21,7 @@ def gerar_clientes(n=1000):
         data_nasc = fake.date_of_birth(minimum_age=18, maximum_age=70)
         data_cadastro = fake.date_between(start_date='-3y', end_date='today')
         clientes.append({
-            'id_cliente': i,                                           # ID numérico sequencial
+            'id_cliente': i,
             'nome': fake.name(),
             'sexo': random.choice(['M', 'F']),
             'data_nascimento': data_nasc,
@@ -29,12 +29,15 @@ def gerar_clientes(n=1000):
             'cidade': fake.city(),
             'estado': fake.estado_sigla(),
             'data_cadastro': data_cadastro,
-            'origem_cadastro': random.choice(canais_origem)
+            'canal_aquisicao': random.choice(canais_origem)
         })
     return pd.DataFrame(clientes)
 
 # 5. Geração
 df_clientes = gerar_clientes(1000)
+df_clientes['id_cliente'] = df_clientes['id_cliente'].astype(str)
+df_clientes['data_nascimento'] = df_clientes['data_nascimento'].astype(str)
+df_clientes['data_cadastro'] = df_clientes['data_cadastro'].astype(str)
 
 # 6. Salvando tabela
 df_clientes.to_json('data/cli_master.json', orient='records', indent=4, force_ascii=False)

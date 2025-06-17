@@ -1,0 +1,50 @@
+[
+    {
+        "id_fornecedor":"1",
+        "nome":"Fornec ELE 1"
+    },
+    {
+        "id_fornecedor":"2",
+        "nome":"Fornec ELE 2"
+    },
+    {
+        "id_fornecedor":"3",
+        "nome":"Fornec MOD 3"
+    },
+    {
+        "id_fornecedor":"4",
+        "nome":"Fornec MOD 4"
+    },
+    {
+        "id_fornecedor":"5",
+        "nome":"Fornec BEL 5"
+    },
+    {
+        "id_fornecedor":"6",
+        "nome":"Fornec BEL 6"
+    },
+    {
+        "id_fornecedor":"7",
+        "nome":"Fornec CAS 7"
+    },
+    {
+        "id_fornecedor":"8",
+        "nome":"Fornec CAS 8"
+    },
+    {
+        "id_fornecedor":"9",
+        "nome":"Fornec LIV 9"
+    },
+    {
+        "id_fornecedor":"10",
+        "nome":"Fornec LIV 10"
+    },
+    {
+        "id_fornecedor":"11",
+        "nome":"Fornec ESP 11"
+    },
+    {
+        "id_fornecedor":"12",
+        "nome":"Fornec ESP 12"
+    }
+]
