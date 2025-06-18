@@ -33,10 +33,33 @@ html {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Alinhar conteúdo verticalmente empilhado */
     display: flex;
+    flex-direction: column;
+    /* Muda para coluna */
     align-items: center;
+    /* Centraliza horizontalmente */
     justify-content: center;
+    /* Centraliza verticalmente */
+
     font-weight: bold;
+    padding: 16px;
+    /* Um pouco de espaçamento interno */
+}
+
+/* Espaçamento entre label e valor */
+.kpi-label {
+    font-size: 18px;
+    color: #666;
+
+    margin-bottom: 6px;
+    /* Espaço abaixo do label */
+}
+
+.kpi-value {
+    font-size: 20px;
+    color: #333;
 }
 
 /* === WRAPPER DO TOPO COM KPIs + FILTRO === */
