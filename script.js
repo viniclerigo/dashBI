@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const ctx = document.getElementById("faturamento-chart").getContext("2d");
+    const ctxClientes = document.getElementById("clientes-chart").getContext("2d"); // novo gráfico
     const select = document.getElementById("granularity-select");
+    const selectClientes = document.getElementById("granularity-clientes");
     const toggleBtn = document.getElementById("toggle-datalabels");
     const yearFilter = document.getElementById("year-filter");
 
     const vendas = await fetch("data/vendas.json").then(res => res.json());
+    const clientes = await fetch("data/cli_master.json").then(res => res.json()); // nova base
 
     // Extrair anos únicos das vendas
     const anos = Array.from(new Set(vendas.map(v => new Date(v.data_venda).getFullYear())))
@@ -14,29 +17,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     yearFilter.innerHTML = `<option value="todos">Todos</option>` +
         anos.map(ano => `<option value="${ano}">${ano}</option>`).join("");
 
-    // Set para armazenar múltiplos anos selecionados
     const anosSelecionados = new Set();
-    anosSelecionados.add("todos"); // Inicialmente seleciona todos
+    anosSelecionados.add("todos");
 
-    // Função para filtrar vendas por anos selecionados
     function filtrarVendasPorAnosSelecionados() {
-        if (anosSelecionados.has("todos") || anosSelecionados.size === 0) {
-            return vendas;  // retorna tudo
-        }
-        return vendas.filter(v => {
-            const anoVenda = new Date(v.data_venda).getFullYear();
-            return anosSelecionados.has(anoVenda);
-        });
+        if (anosSelecionados.has("todos") || anosSelecionados.size === 0) return vendas;
+        return vendas.filter(v => anosSelecionados.has(new Date(v.data_venda).getFullYear()));
     }
 
-    // Atualiza KPI de faturamento total
     function atualizarKPI(vendasFiltradas) {
         const totalFaturamento = vendasFiltradas.reduce((acc, venda) => acc + venda.total, 0);
         document.querySelector("#kpi-faturamento-total .kpi-value").textContent =
             `R$ ${totalFaturamento.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
     }
 
-    // Função agrupamento adaptada para receber vendas filtradas
     function agruparVendas(granularidade, vendasFiltradas) {
         const agrupado = {};
 
@@ -85,7 +79,56 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
+    function agruparClientes(granularidade) {
+        const agrupado = {};
+
+        clientes.forEach(cliente => {
+            const data = new Date(cliente.data_cadastro);
+            let chave;
+
+            switch (granularidade) {
+                case "ano":
+                    chave = data.getFullYear();
+                    break;
+                case "trimestre":
+                    const trimestre = Math.floor(data.getMonth() / 3) + 1;
+                    chave = `${data.getFullYear()}-T${trimestre}`;
+                    break;
+                case "mes":
+                default:
+                    chave = data.getMonth();
+                    break;
+            }
+
+            agrupado[chave] = (agrupado[chave] || 0) + 1;
+        });
+
+        const meses = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        if (granularidade === "mes") {
+            const labels = [];
+            const values = [];
+            for (let i = 0; i < 12; i++) {
+                labels.push(meses[i]);
+                values.push(agrupado[i] || 0);
+            }
+            return { labels, values };
+        } else {
+            return Object.entries(agrupado)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .reduce((acc, [k, v]) => {
+                    acc.labels.push(k);
+                    acc.values.push(v);
+                    return acc;
+                }, { labels: [], values: [] });
+        }
+    }
+
     let chart;
+    let chartClientes;
     let dataLabelsVisible = true;
 
     function atualizarGrafico(granularidade, vendasFiltradas) {
@@ -117,48 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         align: 'top',
                         clamp: true,
                         font: { weight: 'bold', size: 12 },
-                        formatter: val => `R$ ${parseFloat(val).toLocaleString("pt-BR")}`,
-                        listeners: false,
-                        animation: { duration: 0 },
-                        padding: (function () {
-                            const labelHeight = 14;
-                            const spacing = 6;
-                            let labelTops = [];
-
-                            return function (context) {
-                                const chart = context.chart;
-                                const dataIndex = context.dataIndex;
-                                const meta = chart.getDatasetMeta(0);
-                                const bar = meta.data[dataIndex];
-                                if (!bar) return 0;
-
-                                const currentTop = bar.tooltipPosition().y;
-                                let offset = 0;
-
-                                if (dataIndex === 0) {
-                                    labelTops = [currentTop];
-                                    return 0;
-                                }
-
-                                for (let i = dataIndex - 1; i >= 0; i--) {
-                                    const prevTop = labelTops[i];
-                                    if (prevTop === undefined) continue;
-
-                                    const currentLabelBottom = currentTop - offset + labelHeight;
-                                    const prevLabelTop = prevTop;
-
-                                    const overlap = prevLabelTop + spacing > currentLabelBottom;
-
-                                    if (overlap) {
-                                        const neededOffset = (prevLabelTop + spacing) - currentLabelBottom;
-                                        offset += neededOffset;
-                                    }
-                                }
-
-                                labelTops[dataIndex] = currentTop - offset;
-                                return offset;
-                            };
-                        })()
+                        formatter: val => `R$ ${parseFloat(val).toLocaleString("pt-BR")}`
                     },
                     tooltip: {
                         callbacks: {
@@ -179,7 +181,49 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Função para atualizar texto que mostra os anos selecionados
+    function atualizarGraficoClientes(granularidade) {
+        const { labels, values } = agruparClientes(granularidade);
+
+        if (chartClientes) chartClientes.destroy();
+
+        chartClientes = new Chart(ctxClientes, {
+            type: "bar",
+            data: {
+                labels,
+                datasets: [{
+                    label: "Novos Clientes",
+                    data: values,
+                    backgroundColor: "#66bb6a"
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: { top: 50, bottom: 10, left: 10, right: 10 } },
+                plugins: {
+                    legend: { display: false },
+                    datalabels: {
+                        display: dataLabelsVisible,
+                        color: '#000',
+                        anchor: 'end',
+                        align: 'top',
+                        font: { weight: 'bold', size: 12 },
+                        formatter: val => `${val} clientes`
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { display: false },
+                        beginAtZero: true,
+                        ticks: { callback: val => `${val}` }
+                    },
+                    x: { grid: { display: false } }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    }
+
     function atualizarTextoFiltro() {
         const container = document.querySelector(".filter-container");
         let texto;
@@ -201,17 +245,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         info.textContent = texto;
     }
 
-    // Função para atualizar tudo (KPIs e gráfico) com base no filtro e granularidade
     function atualizarDashboard() {
         const vendasFiltradas = filtrarVendasPorAnosSelecionados();
-        const granularidade = select.value;
+        const granularidadeVendas = select.value;
+        const granularidadeClientes = selectClientes.value;
 
         atualizarKPI(vendasFiltradas);
-        atualizarGrafico(granularidade, vendasFiltradas);
+        atualizarGrafico(granularidadeVendas, vendasFiltradas);
+        atualizarGraficoClientes(granularidadeClientes);
         atualizarTextoFiltro();
     }
 
-    // Evento para filtro de ano simulando múltiplas seleções
     yearFilter.addEventListener("change", (e) => {
         const valor = e.target.value;
 
@@ -229,7 +273,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 anosSelecionados.add(anoNum);
             }
 
-            // Limpa a seleção para permitir re-seleção do mesmo ano
             yearFilter.value = "";
         }
 
@@ -237,6 +280,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     select.addEventListener("change", atualizarDashboard);
+    selectClientes.addEventListener("change", atualizarDashboard);
 
     toggleBtn.addEventListener("click", () => {
         dataLabelsVisible = !dataLabelsVisible;
@@ -247,6 +291,5 @@ document.addEventListener("DOMContentLoaded", async () => {
             : "Exibir Valores";
     });
 
-    // Inicializa com todos dados
     atualizarDashboard();
 });

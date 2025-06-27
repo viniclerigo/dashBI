@@ -52,7 +52,17 @@
                     </div>
                     <canvas id="faturamento-chart"></canvas>
                 </div>
-                <div id="chart-temporal-2" class="chart temporal-chart">Gráfico Temporal 2</div>
+                <div id="chart-temporal-2" class="chart temporal-chart">
+                    <div class="chart-header">
+                        <label for="granularity-clientes">Clientes por:</label>
+                        <select id="granularity-clientes">
+                            <option value="mes">Mês</option>
+                            <option value="trimestre">Trimestre</option>
+                            <option value="ano">Ano</option>
+                        </select>
+                    </div>
+                    <canvas id="clientes-chart"></canvas>
+                </div>
             </div>
 
             <!-- COLUNA DIREITA -->
@@ -64,7 +74,8 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="assets/js/dashboard.js"></script>
+
 </body>
 
 </html>
