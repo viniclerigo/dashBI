@@ -1,10 +1,10 @@
 import { inicializarGraficoFaturamento, atualizarGraficoFaturamento, atualizarVisibilidadeDataLabels } from './graficoFaturamento.js';
 import { inicializarGraficoClientes, atualizarGraficoClientes, atualizarVisibilidadeDataLabelsClientes } from './graficoClientes.js';
+import { inicializarGraficoCanal, atualizarGraficoCanal, atualizarVisibilidadeDataLabelsCanal } from './graficoCanal.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
-    let dataLabelsVisible = true; // variável global
+    let dataLabelsVisible = true;
 
-    // === GRÁFICO DE FATURAMENTO ===
     const ctxFaturamento = document.getElementById("faturamento-chart").getContext("2d");
     const select = document.getElementById("granularity-select");
     const toggleBtn = document.getElementById("toggle-datalabels");
@@ -93,6 +93,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const granularidadeClientesSelect = document.getElementById("granularity-clientes");
     const chartClientes = inicializarGraficoClientes(ctxClientes);
 
+    // === GRÁFICO DE RANKING POR CANAL DE AQUISIÇÃO ===
+    const ctxCanal = document.getElementById("ranking1-chart-canvas").getContext("2d");
+    const chartCanal = inicializarGraficoCanal(ctxCanal);
+
     function atualizarTextoAnosSelecionados() {
         const selectedText = [...anosSelecionados]
             .filter(ano => ano !== "todos")
@@ -107,7 +111,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function atualizarDashboard() {
-        // === FATURAMENTO ===
         const vendasFiltradas = filtrarVendas();
         const granularidade = select.value;
         const { labels, valores } = agrupar(vendasFiltradas, granularidade);
@@ -117,7 +120,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const numeroVendas = vendasFiltradas.length;
         const ticketMedio = numeroVendas > 0 ? total / numeroVendas : 0;
 
-        // === KPIs ===
         document.querySelector("#kpi-faturamento-total .kpi-value").textContent =
             `R$ ${total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
 
@@ -130,7 +132,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector("#kpi-maior-venda .kpi-value").textContent =
             `R$ ${Math.max(...vendasFiltradas.map(v => v.total)).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
 
-        // === KPI 5: Canal de aquisição com maior faturamento ===
         const canais = {};
         vendasFiltradas.forEach(v => {
             canais[v.canal_aquisicao] = (canais[v.canal_aquisicao] || 0) + v.total;
@@ -141,7 +142,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         document.querySelector("#kpi-canal-aquisicao .kpi-value").textContent = canalMaisVendas || "N/A";
 
-        // === CLIENTES ===
+        // === Atualizar gráfico de canal ===
+        const canaisOrdenados = Object.entries(canais).sort((a, b) => b[1] - a[1]);
+        const labelsCanal = canaisOrdenados.map(([canal]) => canal);
+        const valoresCanal = canaisOrdenados.map(([, valor]) => valor.toFixed(2));
+
+        chartCanal.data.labels = labelsCanal;
+        chartCanal.data.datasets[0].data = valoresCanal;
+        chartCanal.update();
+
         const clientesFiltrados = filtrarClientes();
         const granularidadeClientes = granularidadeClientesSelect.value;
         atualizarGraficoClientes(chartClientes, clientesFiltrados, granularidadeClientes);
@@ -174,6 +183,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         atualizarVisibilidadeDataLabels(dataLabelsVisible);
         atualizarVisibilidadeDataLabelsClientes(dataLabelsVisible);
+        atualizarVisibilidadeDataLabelsCanal(dataLabelsVisible);
 
         toggleBtn.textContent = dataLabelsVisible ? "Ocultar Valores" : "Exibir Valores";
     });
