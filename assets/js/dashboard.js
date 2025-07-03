@@ -1,7 +1,9 @@
-import { inicializarGraficoFaturamento, atualizarGraficoFaturamento, toggleValores } from './graficoFaturamento.js';
-import { inicializarGraficoClientes, atualizarGraficoClientes } from './graficoClientes.js';
+import { inicializarGraficoFaturamento, atualizarGraficoFaturamento, atualizarVisibilidadeDataLabels } from './graficoFaturamento.js';
+import { inicializarGraficoClientes, atualizarGraficoClientes, atualizarVisibilidadeDataLabelsClientes } from './graficoClientes.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
+    let dataLabelsVisible = true; // variável global
+
     // === GRÁFICO DE FATURAMENTO ===
     const ctxFaturamento = document.getElementById("faturamento-chart").getContext("2d");
     const select = document.getElementById("granularity-select");
@@ -11,13 +13,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const vendas = await fetch("../data/vendas.json").then(res => res.json());
     const clientes = await fetch("../data/cli_master.json").then(res => res.json());
 
-    // Parse de datas sem considerar fuso
     function parseDataLocal(dateString) {
         const [ano, mes, dia] = dateString.split("T")[0].split("-").map(Number);
         return new Date(ano, mes - 1, dia);
     }
 
-    // Corrigir ano usando parseDataLocal
     const anos = Array.from(new Set(vendas.map(v => parseDataLocal(v.data_venda).getFullYear()))).sort();
     yearFilter.innerHTML = `<option value="todos">Todos</option>` + anos.map(ano => `<option value="${ano}">${ano}</option>`).join("");
 
@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-    // Criação do elemento dinâmico para mostrar os anos selecionados (logo abaixo do filtro)
     const filterContainer = document.querySelector('.filter-container');
     const selectedYearsText = document.createElement('div');
     selectedYearsText.style.marginTop = '8px';
@@ -108,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function atualizarDashboard() {
-        // Faturamento
+        // === FATURAMENTO ===
         const vendasFiltradas = filtrarVendas();
         const granularidade = select.value;
         const { labels, valores } = agrupar(vendasFiltradas, granularidade);
@@ -118,15 +117,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector("#kpi-faturamento-total .kpi-value").textContent =
             `R$ ${total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
 
-        // Clientes
+        // === TICKET MÉDIO (KPI 2) ===
+        const numeroVendas = vendasFiltradas.length;
+        const ticketMedio = numeroVendas > 0 ? total / numeroVendas : 0;
+        document.querySelector("#kpi-ticket-medio .kpi-value").textContent =
+            `R$ ${ticketMedio.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+
+        // === CLIENTES ===
         const clientesFiltrados = filtrarClientes();
         const granularidadeClientes = granularidadeClientesSelect.value;
         atualizarGraficoClientes(chartClientes, clientesFiltrados, granularidadeClientes);
 
-        // Atualiza o texto dos anos selecionados na DIV criada
         atualizarTextoAnosSelecionados();
-
-        // Mantém o option 'todos' fixo
         yearFilter.options[0].textContent = "Todos";
     }
 
@@ -149,9 +151,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     granularidadeClientesSelect.addEventListener("change", atualizarDashboard);
 
     toggleBtn.addEventListener("click", () => {
-        const visible = toggleValores(chart);
-        toggleBtn.textContent = visible ? "Ocultar Valores" : "Exibir Valores";
+        dataLabelsVisible = !dataLabelsVisible;
+        window.dataLabelsVisible = dataLabelsVisible;
+
+        atualizarVisibilidadeDataLabels(dataLabelsVisible);
+        atualizarVisibilidadeDataLabelsClientes(dataLabelsVisible);
+
+        toggleBtn.textContent = dataLabelsVisible ? "Ocultar Valores" : "Exibir Valores";
     });
+
+    window.dataLabelsVisible = dataLabelsVisible;
 
     atualizarDashboard();
 });

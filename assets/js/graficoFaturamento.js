@@ -1,5 +1,3 @@
-// graficoFaturamento.js
-
 let chart;
 let dataLabelsVisible = true;
 
@@ -58,8 +56,7 @@ export function atualizarGraficoFaturamento(chart, labels, valores) {
     chart.update();
 }
 
-export function toggleValores(chart) {
-    dataLabelsVisible = !dataLabelsVisible;
-    chart.update();
-    return dataLabelsVisible;
+export function atualizarVisibilidadeDataLabels(visible) {
+    dataLabelsVisible = visible;
+    if (chart) chart.update();
 }

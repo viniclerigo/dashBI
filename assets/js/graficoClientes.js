@@ -1,5 +1,3 @@
-// graficoClientes.js
-
 let chartClientes;
 let dataLabelsVisible = true;
 
@@ -44,7 +42,7 @@ export function inicializarGraficoClientes(ctx) {
                 x: { grid: { display: false } }
             }
         },
-        plugins: [ChartDataLabels] // utiliza plugin global via CDN
+        plugins: [ChartDataLabels]
     });
 
     return chartClientes;
@@ -95,8 +93,7 @@ export function atualizarGraficoClientes(chart, clientesFiltrados, granularidade
     chart.update();
 }
 
-export function toggleValoresClientes() {
-    dataLabelsVisible = !dataLabelsVisible;
+export function atualizarVisibilidadeDataLabelsClientes(visible) {
+    dataLabelsVisible = visible;
     if (chartClientes) chartClientes.update();
-    return dataLabelsVisible;
 }
