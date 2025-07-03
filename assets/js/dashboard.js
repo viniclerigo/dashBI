@@ -114,14 +114,32 @@ document.addEventListener("DOMContentLoaded", async () => {
         atualizarGraficoFaturamento(chart, labels, valores);
 
         const total = vendasFiltradas.reduce((acc, v) => acc + v.total, 0);
+        const numeroVendas = vendasFiltradas.length;
+        const ticketMedio = numeroVendas > 0 ? total / numeroVendas : 0;
+
+        // === KPIs ===
         document.querySelector("#kpi-faturamento-total .kpi-value").textContent =
             `R$ ${total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
 
-        // === TICKET MÉDIO (KPI 2) ===
-        const numeroVendas = vendasFiltradas.length;
-        const ticketMedio = numeroVendas > 0 ? total / numeroVendas : 0;
         document.querySelector("#kpi-ticket-medio .kpi-value").textContent =
             `R$ ${ticketMedio.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+
+        document.querySelector("#kpi-quantidade-vendas .kpi-value").textContent =
+            `${numeroVendas.toLocaleString("pt-BR")}`;
+
+        document.querySelector("#kpi-maior-venda .kpi-value").textContent =
+            `R$ ${Math.max(...vendasFiltradas.map(v => v.total)).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+
+        // === KPI 5: Canal de aquisição com maior faturamento ===
+        const canais = {};
+        vendasFiltradas.forEach(v => {
+            canais[v.canal_aquisicao] = (canais[v.canal_aquisicao] || 0) + v.total;
+        });
+
+        const canalMaisVendas = Object.entries(canais).reduce((maior, atual) =>
+            atual[1] > maior[1] ? atual : maior, ["", 0])[0];
+
+        document.querySelector("#kpi-canal-aquisicao .kpi-value").textContent = canalMaisVendas || "N/A";
 
         // === CLIENTES ===
         const clientesFiltrados = filtrarClientes();
